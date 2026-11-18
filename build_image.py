@@ -16,8 +16,9 @@ cyber-outage vignette and a Bitcoin vignette:
   - Crypto (bottom left): a Bitcoin coin sinking in heavy seas under a
     plunging chart — about half of all bitcoin is now held at a loss
     after the 50% retreat from October 2025's high
-This script frames it as a front page: masthead on top, six headline
-strips below, and exports a PNG of at most 1024x1024 and 1 MiB.
+This script frames it as a magazine cover in the style of The
+Economist's "The World Ahead": a small red masthead box and a large
+date title above a full-bleed icon collage, at most 1024x1024, 1 MiB.
 """
 from PIL import Image, ImageDraw, ImageFont
 import os
@@ -31,7 +32,7 @@ GOLD = (242, 193, 78)
 WHITE = (245, 247, 250)
 
 W, H = 1024, 1024
-TOP_H, BOT_H = 98, 214
+TOP_H, BOT_H = 190, 0
 
 
 def font(name, size):
@@ -46,12 +47,14 @@ def centered(draw, y, text, fnt, fill):
 def main():
     art = Image.open(SRC).convert("RGB")
     art = art.resize((W, H - TOP_H - BOT_H), Image.LANCZOS)
-    page = Image.new("RGB", (W, H), NAVY)
+    page = Image.new("RGB", (W, H), (247, 244, 235))
     page.paste(art, (0, TOP_H))
     draw = ImageDraw.Draw(page)
 
-    centered(draw, 12, "THE WORLD TODAY", font("DejaVuSans-Bold.ttf", 46), WHITE)
-    centered(draw, 66, "WEDNESDAY · 18 NOVEMBER 2026", font("DejaVuSans-Bold.ttf", 22), GOLD)
+    draw.rectangle([312, 14, 712, 58], fill=(227, 18, 11))
+    centered(draw, 22, "THE WORLD TODAY", font("DejaVuSans-Bold.ttf", 30), WHITE)
+    centered(draw, 72, "18 NOVEMBER 2026", font("DejaVuSans-Bold.ttf", 84), (17, 17, 17))
+    centered(draw, 164, "WEDNESDAY · THE DAY IN ONE IMAGE", font("DejaVuSans-Bold.ttf", 20), (90, 90, 90))
 
     headlines = [
         ((242, 193, 78), "APEC SUMMIT: TRUMP, XI & MODI CONVERGE ON ASIA"),
