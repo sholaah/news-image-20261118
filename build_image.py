@@ -23,7 +23,7 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, "assets", "media-generation-world-18nov-v2-0-98fcdcf4-9196-4485-8a6c-64c8ff9888ab.png")
+SRC = os.path.join(HERE, "assets", "media-generation-world-18nov-economist-0-b39267c1-0dd0-4229-bda6-18d8017ce858.png")
 OUT = os.path.join(HERE, "entry.png")
 FONT_DIR = "/usr/share/fonts/truetype/dejavu"
 NAVY = (9, 24, 43)

@@ -40,6 +40,12 @@ The base illustration was generated in-session and framed with a masthead
 and headline strips by `build_image.py` (Pillow). The day's stories were
 compiled from the morning's wire and front-page reports of 18 Nov 2026.
 
+## Design
+
+The illustration is a flat red/black/navy icon collage in the style of
+*The Economist*'s "The World Ahead" covers — a circular globe of small
+iconic scenes, one per story.
+
 ## License
 
 MIT — see `LICENSE`.
