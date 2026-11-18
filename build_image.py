@@ -1,21 +1,29 @@
 """Build entry.png for make.fun news-image-20261118.
 
 The base illustration (assets/) was generated in-session as an editorial
-world-map scene of 18 November 2026's top stories:
+world-map scene of 18 November 2026's top stories, then extended with a
+cyber-outage vignette and a Bitcoin vignette:
   - APEC / Quad summit diplomacy in Asia (Trump, Xi, Modi in Manila & Shenzhen)
   - Ukraine's strike on the Crimean Bridge, second day running
   - Iranian drones vs the US radar station in Bahrain, tanker in the strait
   - Wall Street's 1,000-point Dow plunge ahead of Nvidia earnings
   - NASA's Voyager 1 closing in on one light-day from Earth
   - Cyclone Akvan spinning over the Bay of Bengal
-This script frames it as a front page: masthead on top, headline strips
-below, and exports a PNG of at most 1024x1024 and 1 MiB.
+  - The outage wave (upper left): the NSA's classified network down,
+    Apple's services disrupted by an internal update, supermarket
+    freezers hacked across Europe, and Equinor confirming the week's
+    only acknowledged cyberattack — officials see no coordinated attack
+  - Crypto (bottom left): a Bitcoin coin sinking in heavy seas under a
+    plunging chart — about half of all bitcoin is now held at a loss
+    after the 50% retreat from October 2025's high
+This script frames it as a front page: masthead on top, six headline
+strips below, and exports a PNG of at most 1024x1024 and 1 MiB.
 """
 from PIL import Image, ImageDraw, ImageFont
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, "assets", "media-generation-world-18nov-0-3511170e-409b-411a-b1c8-dd35e5807fbe.png")
+SRC = os.path.join(HERE, "assets", "media-generation-world-18nov-v2-0-98fcdcf4-9196-4485-8a6c-64c8ff9888ab.png")
 OUT = os.path.join(HERE, "entry.png")
 FONT_DIR = "/usr/share/fonts/truetype/dejavu"
 NAVY = (9, 24, 43)
@@ -23,7 +31,7 @@ GOLD = (242, 193, 78)
 WHITE = (245, 247, 250)
 
 W, H = 1024, 1024
-TOP_H, BOT_H = 98, 146
+TOP_H, BOT_H = 98, 214
 
 
 def font(name, size):
@@ -50,6 +58,8 @@ def main():
         ((231, 76, 60), "UKRAINE STRIKES CRIMEAN BRIDGE FOR A SECOND DAY"),
         ((230, 126, 34), "IRANIAN DRONES HIT U.S. RADAR IN BAHRAIN"),
         ((93, 173, 226), "DOW PLUNGES 1,000 POINTS · VOYAGER 1 NEARS A LIGHT-DAY"),
+        ((46, 204, 113), "CYBER: NSA NET DOWN · APPLE OUTAGE · EQUINOR HACKED"),
+        ((175, 122, 197), "CRYPTO: HALF OF ALL BITCOIN NOW HELD AT A LOSS"),
     ]
     fnt = font("DejaVuSans-Bold.ttf", 24)
     y = H - BOT_H + 10

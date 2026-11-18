@@ -25,6 +25,14 @@ One editorial world map whose flashpoints are the day's top stories:
 - **Voyager 1** closing in on one light-day from Earth — the golden probe
   at the top, beaming home.
 - **Cyclone Akvan** over the Bay of Bengal — the spiral at bottom centre.
+- **The outage wave** — the NSA's classified network went down, Apple's
+  services were disrupted, hackers tampered with supermarket freezers
+  across Europe, and Norway's Equinor confirmed a cyberattack, while
+  U.S. officials said they saw no coordinated attack; the glitching
+  data centre and frost-covered freezers at upper left.
+- **Crypto's drawdown** — about half of all bitcoin is now held at a
+  loss after the ~50% retreat from October 2025's high, with spot ETF
+  outflows passing $850M in a week; the sinking coin at lower left.
 
 The base illustration was generated in-session and framed with a masthead
 and headline strips by `build_image.py` (Pillow). The day's stories were
